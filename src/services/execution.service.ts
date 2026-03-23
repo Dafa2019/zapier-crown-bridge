@@ -25,7 +25,7 @@ export async function executeCommand(intake: IntakeRequest): Promise<ExecutionRe
   log.info({ traceId, intent: parsed.intent }, 'Command parsed');
 
   // 3. Check idempotency
-  const { isDuplicate } = checkIdempotency(traceId);
+  const { isDuplicate } = await checkIdempotency(traceId);
   if (isDuplicate) {
     await logEvent({
       traceId,
