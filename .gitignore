@@ -6,3 +6,6 @@ dist/
 .vercel
 
 .vercel
+build/
+coverage/
+.DS_Store
